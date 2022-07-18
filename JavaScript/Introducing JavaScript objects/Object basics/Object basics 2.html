@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Object basics: Task 2</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+      p {
+        color: purple;
+        margin: 0.5em 0;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+    </style>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+
+  <body>
+    <section class="preview"></section>
+  </body>
+  <script>
+    let bandInfo;
+
+    // Add your code here
+
+    const favBand = {
+      name: "the rockers",
+      nationality: "Egypt",
+      genre: "folk",
+      members: 10,
+      formed: 2012,
+      split: false,
+      albums: [
+        { name: "album 1", released: "2001" },
+        { name: "album 2", released: "2002" },
+        { name: "album 3", released: "2003" },
+      ],
+    };
+
+    bandInfo = `
+    name: ${favBand.name}, 
+    nationality: ${favBand.nationality}, 
+    active years: ${new Date().getFullYear() - favBand.formed}, 
+    style: ${favBand.genre}, 
+    first album name: ${favBand.albums[0].name}, 
+    first album release date: ${favBand.albums[0].released}.`;
+
+    // Don't edit the code below here!
+
+    const section = document.querySelector("section");
+    let para1 = document.createElement("p");
+    para1.textContent = bandInfo;
+    section.appendChild(para1);
+  </script>
+</html>
